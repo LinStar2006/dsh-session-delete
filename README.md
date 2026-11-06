@@ -51,7 +51,31 @@ DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏�
 
 ## 安装
 
-### 方式一：插件管理器
+### 方式一：用 GitHub 仓库链接安装（推荐）
+
+不需要先克隆仓库，直接让 Agent 执行：
+
+```text
+plugin_manager action=install_bundle target=github:LinStar2006/dsh-session-delete
+```
+
+也可以使用完整地址：
+
+```text
+plugin_manager action=install_bundle target=git+https://github.com/LinStar2006/dsh-session-delete.git
+```
+
+或等价的 pnpm 命令：
+
+```bash
+pnpm add github:LinStar2006/dsh-session-delete
+```
+
+安装完成后按提示重载页面（必要时重启 DSH）。这种方式不用管本地路径，后续升级也能直接从仓库重新拉取。
+
+> 如果所在网络无法直接访问 GitHub，可先用 `git clone https://github.com/LinStar2006/dsh-session-delete.git` 克隆到本地固定目录，再用下面的方式二按 `file:` 路径安装。
+
+### 方式二：从本地目录安装（插件管理器）
 
 1. 把本仓库克隆或下载到本地任意目录，例如 `./dsh-session-delete`；
 2. 在 DSH 设置中打开「插件」，选择本地安装，或让 Agent 执行：
@@ -62,7 +86,7 @@ DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏�
 
 3. 重载页面，会话菜单中即出现「删除对话」。
 
-### 方式二：手动安装
+### 方式三：手动安装
 
 1. 将插件目录放入任意固定路径（不要放在会话工作目录里——会话重命名会导致路径变化）；
 2. 在 profile 的 `package.json` 中添加依赖与 bundle 条目：
