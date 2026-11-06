@@ -187,7 +187,8 @@ dsh-session-delete/
 │   ├── zh.json           # title and description shown in the plugin list (Chinese)
 │   └── en.json           # title and description shown in the plugin list (English)
 ├── icon.svg              # plugin icon
-└── README.md
+├── README.md             # this file (English, default)
+└── README.zh-CN.md       # 简体中文文档
 ```
 
 - **Host half** (`lib/index.js`) registers the `/session-delete/inspect` and `/session-delete/delete` routes.

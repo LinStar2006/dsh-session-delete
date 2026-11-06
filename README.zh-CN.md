@@ -187,7 +187,8 @@ dsh-session-delete/
 │   ├── zh.json           # 插件列表中显示的标题与简介（中文）
 │   └── en.json           # 插件列表中显示的标题与简介（英文）
 ├── icon.svg              # 插件图标
-└── README.md
+├── README.md             # 英文文档（默认）
+└── README.zh-CN.md       # 简体中文文档
 ```
 
 - **Host 半**（`lib/index.js`）注册 `/session-delete/inspect`、`/session-delete/delete` 两条路由。
