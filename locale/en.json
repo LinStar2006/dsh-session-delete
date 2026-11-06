@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Delete Conversation",
+    "description": "Adds a Delete conversation action to the session menu: permanently removes the session record, workspace membership and local logs, optionally along with the conversation's own working folder."
+  }
+}
