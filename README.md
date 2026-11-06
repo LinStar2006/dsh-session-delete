@@ -4,10 +4,6 @@
 
 DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏，会话日志与工作区记录仍然保留。本插件提供不可撤销的永久删除，并补齐宿主没有提供的删除链路。
 
-> A plugin that adds a real *Delete conversation* action to DSH's session menu. Archiving only hides a session; this plugin removes the session log, the workspace membership, the archive/pin entries and the client-side list row.
-
-仓库地址：<https://github.com/LinStar2006/dsh-session-delete>
-
 ---
 
 ## 功能
@@ -51,40 +47,31 @@ DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏�
 
 ## 安装
 
-### 方式一：用 GitHub 仓库链接安装（推荐）
+### 方式一：在 DSH 插件页安装（推荐）
 
-不需要先克隆仓库，直接让 Agent 执行：
+1. 打开 DSH 的「插件」设置页；
+2. 点右上角 **添加插件**，在输入框里粘贴本仓库地址：
+
+   ```text
+   https://github.com/LinStar2006/dsh-session-delete
+   ```
+
+   同一个输入框也接受本地目录路径（例如 `D:\plugins\dsh-session-delete`）和包名；
+3. 点 **安装**，等安装完成；重载页面（必要时重启 DSH），会话菜单里即出现「删除对话」。
+
+> 安装器在后台使用 pnpm，等价于 `pnpm add github:LinStar2006/dsh-session-delete`。如果所在网络无法直接访问 GitHub，可以先 `git clone` 到本地固定目录，再把该目录路径粘进同一个输入框。
+
+### 方式二：命令行 / 让 Agent 安装
+
+与方式一等价，直接执行（`target` 同时接受 GitHub 仓库和本地目录）：
 
 ```text
 plugin_manager action=install_bundle target=github:LinStar2006/dsh-session-delete
 ```
 
-也可以使用完整地址：
-
 ```text
-plugin_manager action=install_bundle target=git+https://github.com/LinStar2006/dsh-session-delete.git
+plugin_manager action=install_bundle target=file:<插件绝对路径>
 ```
-
-或等价的 pnpm 命令：
-
-```bash
-pnpm add github:LinStar2006/dsh-session-delete
-```
-
-安装完成后按提示重载页面（必要时重启 DSH）。这种方式不用管本地路径，后续升级也能直接从仓库重新拉取。
-
-> 如果所在网络无法直接访问 GitHub，可先用 `git clone https://github.com/LinStar2006/dsh-session-delete.git` 克隆到本地固定目录，再用下面的方式二按 `file:` 路径安装。
-
-### 方式二：从本地目录安装（插件管理器）
-
-1. 把本仓库克隆或下载到本地任意目录，例如 `./dsh-session-delete`；
-2. 在 DSH 设置中打开「插件」，选择本地安装，或让 Agent 执行：
-
-   ```text
-   plugin_manager action=install_bundle target=file:<仓库绝对路径>
-   ```
-
-3. 重载页面，会话菜单中即出现「删除对话」。
 
 ### 方式三：手动安装
 
