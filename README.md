@@ -14,7 +14,7 @@ DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏�
   1. 停止该会话仍在进行的活动（turn / 子代理 / 后台任务），最多等待 8 秒；
   2. 从所属工作区的会话列表中移除（`detachSession`）；
   3. 从归档列表（`archivedSessionIds`）与置顶列表（`pinnedSessionIds`）中清除；
-  4. 可选：删除「对话独立文件夹」插件（`dsh-conversation-folders`）为该会话建立的工作目录，并从其索引中移除记录；
+  4. 可选：删除 [dsh-conversation-folders](https://github.com/LinStar2006/dsh-conversation-folders)（对话独立文件夹）为该会话建立的工作目录，并从其索引中移除记录；
   5. 删除磁盘上的会话日志目录 `<DSH_HOME>/sessions/<project>/<sessionId>/`；
   6. 删除投影缓存 `<DSH_HOME>/storages/session_projcache/sessions/<sessionId>.json`；
   7. 广播 `api-session/removed` 事件，让客户端立即把这一行从会话列表中移除。
@@ -36,7 +36,7 @@ DSH 内置的会话菜单只有「归档」——归档只是从列表里隐藏�
 
 ### 顺带删除独立工作文件夹
 
-安装「对话独立文件夹」插件后，每个对话会在 `<workspace>/conversations/<folder>` 下拥有自己的工作目录。打开删除确认框时，本插件先通过 `POST /session-delete/inspect` 探测该目录：
+安装 [dsh-conversation-folders](https://github.com/LinStar2006/dsh-conversation-folders)（对话独立文件夹）后，每个对话会在 `<workspace>/conversations/<folder>` 下拥有自己的工作目录。打开删除确认框时，本插件先通过 `POST /session-delete/inspect` 探测该目录：
 
 - 探测到：确认框中出现默认勾选的「同时删除该对话的独立工作文件夹」，并显示目录路径；
 - 探测不到：不显示该选项，行为与未安装该插件时一致。
@@ -108,7 +108,7 @@ profile 目录形如 `<DSH_HOME>/profiles/<profile-name>/`。
 
 1. 在左侧会话列表中找到目标对话；
 2. 打开「⋯」菜单，选择 **删除对话**；
-3. 确认框会显示对话标题与将永久删除的内容；如安装了「对话独立文件夹」，还会显示可选的「同时删除该对话的独立工作文件夹」；
+3. 确认框会显示对话标题与将永久删除的内容；如安装了 [dsh-conversation-folders](https://github.com/LinStar2006/dsh-conversation-folders)，还会显示可选的「同时删除该对话的独立工作文件夹」；
 4. 点击 **永久删除**。
 
 删除完成后该行会立即从列表中消失，无需刷新页面。
